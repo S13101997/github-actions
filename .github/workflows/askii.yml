@@ -1,0 +1,21 @@
+name: ASCII job
+
+on: push
+
+jobs:
+  ascii_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4
+      - name: install
+        run: sudo apt-get install cowsay -y
+      - name: welcome message
+        run: |
+             echo "my first message"
+             ls -l
+             cat README.md 
+      - name: ascyy lib
+        run: cowsay -f dragon "RUn" >> dragon.txt
+      - name: test file
+        run: cat dragon.txt
